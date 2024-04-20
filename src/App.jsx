@@ -1,5 +1,4 @@
-import React, { useContext} from 'react';
-// { useEffect, useState, useContext } from 'react'
+import React, { useContext } from 'react';
 import From from './From';
 import To from './To';
 import './App.css'
@@ -8,7 +7,7 @@ function App() {
   const ref = useContext(Pagecontext);
   const { tocurrencyvalue, settocurrencyvalue, fromcurrencyvalue, setfromcurrencyvalue } = ref;
   function swapcurr() {
-    let z=tocurrencyvalue;
+    let z = tocurrencyvalue;
     settocurrencyvalue(fromcurrencyvalue);
     setfromcurrencyvalue(z);
   }
