@@ -10,6 +10,7 @@ export default function Pagestate(props) {
         let ans = tocurrencyvalue*fromvalue/fromcurrencyvalue;
         ans=Math.round(ans*10000)/10000;
         settovalue(ans);
+        // console.log(1);
         
     }, [optionData,fromvalue, tocurrencyvalue, fromcurrencyvalue]);
     return (

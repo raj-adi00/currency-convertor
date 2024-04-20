@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useContext} from 'react';
 // { useEffect, useState, useContext } from 'react'
 import From from './From';
 import To from './To';
 import './App.css'
-// import Pagecontext from './context/Pagecontext';
+import Pagecontext from './context/Pagecontext';
 function App() {
+  const ref = useContext(Pagecontext);
+  const { tocurrencyvalue, settocurrencyvalue, fromcurrencyvalue, setfromcurrencyvalue } = ref;
+  function swapcurr() {
+    let z=tocurrencyvalue;
+    settocurrencyvalue(fromcurrencyvalue);
+    setfromcurrencyvalue(z);
+  }
   return (
     <>
 
@@ -13,6 +20,7 @@ function App() {
         <div className='w-1/2'>
           <From />
         </div>
+        <div className='absolute'><button className='bg-blue-600 rounded-lg px-5 font-bold py-1' onClick={swapcurr}>Swap</button></div>
         <div className='w-1/2'>
           <To />
         </div>
