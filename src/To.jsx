@@ -4,9 +4,15 @@ function To() {
     const context = useContext(Pagecontext);
     const { optionData, setOptionData, settocurrencyvalue, setfromcurrencyvalue, fromcurrencyvalue, tocurrencyvalue, tovalue,settovalue } = context;
     const fetch_data = async () => {
-        const req = await fetch("https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_e1lUs8cQKJ0iNvgDslK7cC9xE05iMaF6mdyC7cDJ");
-        const data = await req.json();
-        setOptionData(data.data);
+        try{
+
+            const req = await fetch("https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_e1lUs8cQKJ0iNvgDslK7cC9xE05iMaF6mdyC7cDJ");
+            const data = await req.json();
+            setOptionData(data.data);
+        }
+        catch{
+        setOptionData({Failed: "No data"});
+        }
     };
     useEffect(() => {
         fetch_data();
