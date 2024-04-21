@@ -18,11 +18,11 @@ function To() {
         fetch_data();
     }, []);
     return (
-        <div className='bg-gray-300  flex justify-between rounded-lg px-5 py-10 font-bold'>
+        <div className='flex'>
             <div>
                 <h5>To</h5>
                 <input type="number" value={tovalue}
-                    disabled className='bg-white' />
+                    disabled className='bg-white w-1/2' />
             </div>
             <div>
                 <h5>Currency Type</h5>
